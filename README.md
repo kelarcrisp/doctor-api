@@ -1,22 +1,25 @@
-# Bagheera's Pizzeria
+# Doctor api
 
-#### _A web site for ordering pizza - June 21, 2019_
+#### A website to find all of the local doctors in Seattle
 
-#### _By **Na Hyung Choi**_
+#### _By **Kelar Crisp**_
 
 ## Description
 
-On this web site, the user can choose toppings, crust, and a size for one or more pizzas, see the details of the order and the final cost, and "place an order."
+On this website you can search for any doctor in the Seattle area. You can search for a doctor by name or by medical condition.
 
 ### Specs
-| Spec | Input | Output |
-| :-------------     | :------------- | :------------- |
-| **Creates a new pizza through a constructor** | var pizza1 = new Pizza ("large", ["cheese", "sausage"]) | pizza1 = { size : "large", toppings: ["cheese", "sausage"], cost: undefined} |
+| Spec |
+| :-------------     |
+| **Search for details on a doctor by searching their name** |
+| **Search for a doctor based on a medical condition** |
+
 
 ## Setup/Installation Requirements
 
-* Clone this repository and open the .html file.
-* OR go directly to the [Web page](http://schoinh.github.io/pizza)
+* go to https://github.com/epicoding95/doctor-api
+* Clone this repository to your desktop and type "npm install" in the command line
+* type "npm run start" to run the webpage
 
 ## Known Bugs
 * No known bugs at this time.
@@ -25,13 +28,15 @@ On this web site, the user can choose toppings, crust, and a size for one or mor
 * JavaScript
 * jQuery
 * Bootstrap
+* doctor api
+* npm
 
 ## Support and contact details
 
-_Please contact Na Hyung with questions and comments._
+_Please contact Kelar Crisp with questions and comments._
 
 ### License
 
 *GNU GPLv3*
 
-Copyright (c) 2019 **_Na Hyung Choi_**
+Copyright (c) 2019 **Kelar Crisp**

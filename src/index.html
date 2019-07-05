@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project Name</title>
+    <title>DoctorApi/title>
   </head>
-  <body>
+    <body>
+    <form class="search" action="index.html" method="post">
 
+      <div class="form-group">
+        <h1> Find the doctor you need!</h1>
+        <label for="Name">Search for the doctor you need by their name.</label>
+        <input type="text" id="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="Condition">Search for a doctor in Seattle by a health condition.</label>
+        <input type="text" id="condition" required>
+      </div>
+
+      <input type="submit" class="btn btn-info" value="Submit Button">
+
+    </form>
+      <div class="output1">
+      </div>
+      <hr>
+      <div class="output2">
+      </div>
   </body>
 </html>
