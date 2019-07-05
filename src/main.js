@@ -10,10 +10,10 @@ $(".search").submit(function(event){
 
 
   $('.output1').text(" ");
-  $('.output2').text(" ");
+
   let doctorName = $("#name").val();
   let condition = $("#condition").val();
-
+  let location = $("#location").val();
 
   let doctorNames = new Promise(function(resolve,reject){
 //search doctors by name
@@ -39,24 +39,26 @@ $(".search").submit(function(event){
   doctorNames.then(function(response){
     let result = JSON.parse(response);
     if (doctorName === "") {
-      $(".output").text('please enter a valid name');
+      $(".output1").text('please enter a valid name');
     }else if (result.data.length > 1){
-      $(".output1").text(`All results for ${doctorName}`);
+      $(".output1").text(``);
     }
 
-    for (let i = 0; i < 5; i++) {
-    $('.output1').append(`${result.data[i].profile.first_name} <br>`);
-    $('.output1').append(`${result.data[i].profile.last_name}`);
-    $('.output1').append(`${result.data[i].practices.location_slug} `);
-    // $('.output1').append(`${result.data[i].practices.phones.number} <br>`);
-    // $('.output1').append(`${result.data[i].profile.first_name} <br>`);
-    // $('.output1').append(`${result.data[i].profile.first_name} <br>`);
+    for (let i = 0; i < result.data.length; i++) {
 
-
+    $('.output1').append(`<strong>located in: ${result.data[i].practices[0].location_slug} <br>`);
+    $('.output1').append(`<strong>Phone number: ${result.data[i].practices[0].phones[i].number} <br>`);
+    $('.output1').append(`bio: ${result.data[i].profile.bio} <br>`);
+      $('.output1').append(`<strong>Accepting new patients: ${result.data[i].practices[0].accepts_new_patients} <br>`);
+      $('.output1').append(`<strong>First Name:</bold> ${result.data[i].profile.first_name}<br> `);
+      $('.output1').append(`<strong>Last Name ${result.data[i].profile.last_name} <hr>`);
+        $('.output1').append(`<strong>street address: ${result.data[i].practices[0].visit_address.street}<br> `);
+        // $('.output1').append(`website:  ${result.data[i].practices[0].lon}<br>`);
+        <img src="${result.data[i].profile.image_url}">)
 
     }
   },function(error) {
-    $(".output2").text(`There was an error processing your request ${error.message}`);
+    $(".output1").text(`There was an error processing your request ${error.message}`);
   });
 
 });
