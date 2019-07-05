@@ -53,8 +53,8 @@ $(".search").submit(function(event){
       $('.output1').append(`<strong>First Name:</bold> ${result.data[i].profile.first_name}<br> `);
       $('.output1').append(`<strong>Last Name ${result.data[i].profile.last_name} <hr>`);
         $('.output1').append(`<strong>street address: ${result.data[i].practices[0].visit_address.street}<br> `);
-        // $('.output1').append(`website:  ${result.data[i].practices[0].lon}<br>`);
-        <img src="${result.data[i].profile.image_url}">)
+        // $('.output1').append(`website:  ${result.data[i].practices[0].website}<br>`);
+        $(".output1").append("<img src='" + result.data[i].profile.image_url+ "'>")
 
     }
   },function(error) {
