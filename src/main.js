@@ -2,36 +2,23 @@ import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { doctor } from './backend-code';
+import { doctorNames } from './backend-code.js';
 
 $(function() {
   $(".search").submit(function(event){
     event.preventDefault();
 
-
+    
     $('.output1').text(" ");
 
     let doctorName = $("#name").val();
     let condition = $("#condition").val();
     let location = $("#location").val();
 
-    let doctorNames = new Promise(function(resolve,reject){
-      //search doctors by name
-      let request = new XMLHttpRequest();
-      let url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${doctorName}&query=${condition}&location=wa-seattle&skip=0&limit=10&user_key=9b646921fe3bcf87002beb619881b7af`;
+    doctorNames(doctorName, condition).then(function(response){
 
-        request.onload = function() {
-          if (this.status === 200) {
-            resolve(request.response);
-          }else{
-            reject(Error(request.statusText));
-          }
-        };
-        request.open("GET",url, true);
-        request.send();
-      });
 
-      doctorNames.then(function(response){
+
         let result = JSON.parse(response);
         if (doctorName === "") {
           $(".output1").text('please enter a valid name');
