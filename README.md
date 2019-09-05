@@ -20,7 +20,7 @@ On this website you can search for any doctor in the Seattle area. You can searc
 
 ## Setup/Installation Requirements
 ````
-* go to https://github.com/epicoding95/doctor-api
+* Go to https://github.com/epicoding95/doctor-api
 * Clone this repository to your desktop and type "npm install" in the command line
 * type "npm run start" to run the webpage
 * Create your Api Key on https://developer.betterdoctor.com/
